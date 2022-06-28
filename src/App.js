@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useContext, useState } from "react";
+// import ReactDOM from 'react-dom'
+// import logo from './logo.svg';
+import { Routes, Route } from "react-router-dom";
+
+import "./App.css";
+import { ContactUs } from "./Components/ContactUs/ContactUs";
+import { Dashboard } from "./Components/Dashboard/Dashboard";
+import { Footer } from "./Components/Footer";
+import { Navbar } from "./Components/Navbar";
+import { PageOne } from "./Components/PageOne";
+import { PageThree } from "./Components/PageThree";
+import { PageTwo } from "./Components/PageTwo";
 
 function App() {
+  const [page, setPage] = useState("landing");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <PageOne />
+              <PageTwo />
+              <PageThree />
+            </>
+          }
+        ></Route>
+        <Route path="contact" element={<ContactUs />}></Route>
+        <Route path="dashboard" element={<Dashboard />}></Route>
+      </Routes>
+
+      <Footer />
     </div>
   );
 }
