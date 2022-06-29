@@ -189,7 +189,7 @@ export const ContactUs=()=> {
                       </div>
                     </div>
                   </fieldset>
-                  <div className="sm:col-span-2">
+                  <div className="sm:col-span-2">{/* how did u hear */}
                     <label htmlFor="how-did-you-hear-about-us" className="block text-sm font-medium text-gray-700">
                       How did you hear about us?
                     </label>
@@ -202,7 +202,7 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div className="text-right sm:col-span-2">
+                  <div className="text-right sm:col-span-2"> {/* submit button */}
                     <button
                       type="submit"
                       className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-grape-600 hover:bg-grape-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-grape-500"
