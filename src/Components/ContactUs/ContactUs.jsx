@@ -40,7 +40,7 @@ export const ContactUs=()=> {
                   from you! Send us a message using the form opposite, or email us.
                 </p>
                 <form action="#" method="POST" className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-                  <div>
+                  <div> {/* first name */}
                     <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
                       First name
                     </label>
@@ -54,7 +54,7 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div>
+                  <div>{/* last name */}
                     <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
                       Last name
                     </label>
@@ -68,7 +68,7 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2">
+                  <div className="sm:col-span-2"> {/* email */}
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                       Email
                     </label>
@@ -82,7 +82,7 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2">
+                  <div className="sm:col-span-2">{/* company */}
                     <label htmlFor="company" className="block text-sm font-medium text-gray-700">
                       Company
                     </label>
@@ -96,7 +96,7 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2">
+                  <div className="sm:col-span-2">{/* phone */}
                     <div className="flex justify-between">
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
                         Phone
@@ -116,7 +116,7 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2">
+                  <div className="sm:col-span-2">{/* description */}
                     <div className="flex justify-between">
                       <label htmlFor="how-can-we-help" className="block text-sm font-medium text-gray-700">
                         How can we help you?
@@ -136,7 +136,7 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <fieldset className="sm:col-span-2">
+                  <fieldset className="sm:col-span-2">{/* budget */}
                     <legend className="block text-sm font-medium text-gray-700">Expected budget</legend>
                     <div className="mt-4 grid grid-cols-1 gap-y-4">
                       <div className="flex items-center">

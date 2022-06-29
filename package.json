@@ -19,7 +19,8 @@
     "start": "set PORT=3113 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tw": "tailwindcss -i input.css -o App.css --watch"
   },
   "eslintConfig": {
     "extends": [
