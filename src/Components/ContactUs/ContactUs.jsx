@@ -1,11 +1,14 @@
-import React from "react";
-import { ExternalLinkIcon } from '@heroicons/react/solid'
-
-
-export const ContactUs=()=> {
+import React, { useState } from "react";
+import { ExternalLinkIcon } from "@heroicons/react/solid";
+import { ProductOverview } from "./ProductOverview";
+// import '../../App.css'
+export const ContactUs = () => {
+  const [plan, setPlan] = useState("");
+  const handlePlan = (e) => {
+    setPlan(e.target.value);
+  };
   return (
     <div className="bg-white">
-
       <main>
         {/* Header */}
         <div className="py-24 bg-gray-50 sm:py-32">
@@ -14,8 +17,9 @@ export const ContactUs=()=> {
               Get in touch
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl leading-normal text-gray-500 text-center">
-              Convallis feugiat et aliquet pellentesque dictum nisi, velit. Egestas fermentum adipiscing risus quam ac
-              consectetur mattis turpis tristique.
+              Convallis feugiat et aliquet pellentesque dictum nisi, velit.
+              Egestas fermentum adipiscing risus quam ac consectetur mattis
+              turpis tristique.
             </p>
           </div>
         </div>
@@ -34,14 +38,26 @@ export const ContactUs=()=> {
           <div className="relative py-16 px-4 sm:py-24 sm:px-6 lg:px-8 lg:max-w-7xl lg:mx-auto lg:py-32 lg:grid lg:grid-cols-2">
             <div className="lg:pr-8">
               <div className="max-w-md mx-auto sm:max-w-lg lg:mx-0">
-                <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Let's work together</h2>
+                <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                  Let's work together
+                </h2>
                 <p className="mt-4 text-lg text-gray-500 sm:mt-3">
-                  We’d love to hear from you! Send us a message using the form opposite, or email us. We’d love to hear
-                  from you! Send us a message using the form opposite, or email us.
+                  We’d love to hear from you! Send us a message using the form
+                  opposite, or email us. We’d love to hear from you! Send us a
+                  message using the form opposite, or email us.
                 </p>
-                <form action="#" method="POST" className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-                  <div> {/* first name */}
-                    <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
+                <form
+                  action="#"
+                  method="POST"
+                  className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
+                >
+                  <div>
+                    {" "}
+                    {/* first name */}
+                    <label
+                      htmlFor="first-name"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       First name
                     </label>
                     <div className="mt-1">
@@ -54,8 +70,12 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div>{/* last name */}
-                    <label htmlFor="last-name" className="block text-sm font-medium text-gray-700">
+                  <div>
+                    {/* last name */}
+                    <label
+                      htmlFor="last-name"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Last name
                     </label>
                     <div className="mt-1">
@@ -68,8 +88,40 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2"> {/* email */}
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                  <div className="sm:col-span-2">
+                    {/* Gender */}
+                    <label
+                      htmlFor="gender"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Gender
+                    </label>
+                    <div className="mt-1">
+                      <select
+                        defaultValue={""}
+                        name="gender"
+                        id="gender"
+                        autoComplete="gender"
+                        className="block w-full shadow-sm sm:text-sm  border-gray-300 rounded-md firstpeer-first:text-gray-600"
+                      >
+                        <option
+                          /* className="text-gray-600" */ value={""}
+                          disabled
+                        >
+                          Your gender
+                        </option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className="sm:col-span-2">
+                    {" "}
+                    {/* email */}
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700"
+                    >
                       Email
                     </label>
                     <div className="mt-1">
@@ -82,32 +134,63 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2">{/* company */}
-                    <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                      Company
+                  <div className="sm:col-span-2">
+                    {/* address */}
+                    <label
+                      htmlFor="address"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Address
                     </label>
                     <div className="mt-1">
                       <input
                         type="text"
-                        name="company"
-                        id="company"
-                        autoComplete="organization"
+                        name="address"
+                        id="address"
+                        autoComplete="address"
                         className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border-gray-300 rounded-md"
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2">{/* phone */}
+                  <div className="sm:col-span-2">
+                    {/* postcode */}
+                    <label
+                      htmlFor="postcode"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Post Code
+                    </label>
+                    <div className="mt-1">
+                      <input
+                        type="tel"
+                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                        name="postcode"
+                        id="postcode"
+                        autoComplete="postcode"
+                        className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border-gray-300 rounded-md"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-2">
+                    {/* phone */}
                     <div className="flex justify-between">
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Phone
                       </label>
-                      <span id="phone-description" className="text-sm text-gray-500">
+                      <span
+                        id="phone-description"
+                        className="text-sm text-gray-500"
+                      >
                         Optional
                       </span>
                     </div>
                     <div className="mt-1">
                       <input
-                        type="text"
+                        type="tel"
+                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                         name="phone"
                         id="phone"
                         autoComplete="tel"
@@ -116,96 +199,52 @@ export const ContactUs=()=> {
                       />
                     </div>
                   </div>
-                  <div className="sm:col-span-2">{/* description */}
-                    <div className="flex justify-between">
-                      <label htmlFor="how-can-we-help" className="block text-sm font-medium text-gray-700">
-                        How can we help you?
-                      </label>
-                      <span id="how-can-we-help-description" className="text-sm text-gray-500">
-                        Max. 500 characters
-                      </span>
-                    </div>
-                    <div className="mt-1">
-                      <textarea
-                        id="how-can-we-help"
-                        name="how-can-we-help"
-                        aria-describedby="how-can-we-help-description"
-                        rows={4}
-                        className="block w-full shadow-sm sm:text-sm focus:ring-grape-500 focus:border-grape-500 border border-gray-300 rounded-md"
-                        defaultValue={''}
-                      />
-                    </div>
-                  </div>
-                  <fieldset className="sm:col-span-2">{/* budget */}
-                    <legend className="block text-sm font-medium text-gray-700">Expected budget</legend>
+                  <fieldset className="sm:col-span-2">
+                    {/* budget */}
+                    <legend className="block text-sm font-medium text-gray-700">
+                      Select Plan
+                    </legend>
                     <div className="mt-4 grid grid-cols-1 gap-y-4">
                       <div className="flex items-center">
                         <input
-                          id="budget-under-25k"
-                          name="budget"
-                          defaultValue="under_25k"
+                          id="planClassic"
+                          name="plan"
+                          defaultValue="classic"
+                          onChange={handlePlan}
                           type="radio"
                           className="focus:ring-grape-500 h-4 w-4 text-grape-600 border-gray-300"
                         />
-                        <label htmlFor="budget-under-25k" className="ml-3">
-                          <span className="block text-sm text-gray-700">Less than $25K</span>
+                        <label htmlFor="planClassic" className="ml-3">
+                          <span className="block text-sm text-gray-700">
+                            Mortgage Plan Classic
+                          </span>
                         </label>
                       </div>
                       <div className="flex items-center">
                         <input
-                          id="budget-25k-50k"
-                          name="budget"
-                          defaultValue="25k-50k"
+                          id="planPremium"
+                          name="plan"
+                          defaultValue="premium"
+                          onChange={handlePlan}
                           type="radio"
                           className="focus:ring-grape-500 h-4 w-4 text-grape-600 border-gray-300"
                         />
-                        <label htmlFor="budget-25k-50k" className="ml-3">
-                          <span className="block text-sm text-gray-700">$25K – $50K</span>
+                        <label htmlFor="planPremium" className="ml-3">
+                          <span className="block text-sm text-gray-700">
+                            Mortgage Plan Premium
+                          </span>
                         </label>
                       </div>
-                      <div className="flex items-center">
-                        <input
-                          id="budget-50k-100k"
-                          name="budget"
-                          defaultValue="50k-100k"
-                          type="radio"
-                          className="focus:ring-grape-500 h-4 w-4 text-grape-600 border-gray-300"
-                        />
-                        <label htmlFor="budget-50k-100k" className="ml-3">
-                          <span className="block text-sm text-gray-700">$50K – $100K</span>
-                        </label>
-                      </div>
-                      <div className="flex items-center">
-                        <input
-                          id="budget-over-100k"
-                          name="budget"
-                          defaultValue="over_100k"
-                          type="radio"
-                          className="focus:ring-grape-500 h-4 w-4 text-grape-600 border-gray-300"
-                        />
-                        <label htmlFor="budget-over-100k" className="ml-3">
-                          <span className="block text-sm text-gray-700">$100K+</span>
-                        </label>
-                      </div>
+                      {/* product overview */}
+                      <ProductOverview plan={plan} />
                     </div>
                   </fieldset>
-                  <div className="sm:col-span-2">{/* how did u hear */}
-                    <label htmlFor="how-did-you-hear-about-us" className="block text-sm font-medium text-gray-700">
-                      How did you hear about us?
-                    </label>
-                    <div className="mt-1">
-                      <input
-                        type="text"
-                        name="how-did-you-hear-about-us"
-                        id="how-did-you-hear-about-us"
-                        className="shadow-sm focus:ring-grape-500 focus:border-grape-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                      />
-                    </div>
-                  </div>
-                  <div className="text-right sm:col-span-2"> {/* submit button */}
+
+                  <div className="text-right sm:col-span-2">
+                    {/* submit button */}
                     <button
                       type="submit"
-                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-grape-600 hover:bg-grape-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-grape-500"
+                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-800 bg-orange-500 hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-grape-500"
                     >
                       Submit
                     </button>
@@ -220,7 +259,9 @@ export const ContactUs=()=> {
         <div className="bg-grape-400">
           <div className="max-w-md mx-auto text-center py-16 px-4 sm:max-w-2xl sm:py-24 sm:px-6 lg:px-8 lg:py-32">
             <h2 className="text-3xl font-extrabold sm:text-4xl">
-              <span className="block text-white">Looking for a new career?</span>
+              <span className="block text-white">
+                Looking for a new career?
+              </span>
               <span className="block text-grape-900">We’re hiring.</span>
             </h2>
             <a
@@ -228,11 +269,14 @@ export const ContactUs=()=> {
               className="mt-8 w-full inline-flex items-center justify-center py-3 px-5 bg-white border border-transparent rounded-md shadow-md text-base font-medium text-grape-600 hover:bg-grape-50 sm:w-auto"
             >
               <span>See open positions</span>
-              <ExternalLinkIcon className="ml-3 h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+              <ExternalLinkIcon
+                className="ml-3 h-5 w-5 flex-shrink-0 text-gray-400"
+                aria-hidden="true"
+              />
             </a>
           </div>
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
