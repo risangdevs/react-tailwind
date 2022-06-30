@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
     "./public/*.{html,js,jsx}",
     "./src/*.{html,js,jsx}",
     "./src/**/*.{html,js,jsx}",
     "./src/**/**/*.jsx",
+    // "./src/Components/ContactUs/ContactUs.jsx"
   ],
   theme: {
     extend: {
@@ -14,5 +15,13 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
+  safelist: [
+    "bg-red-500",
+    "bg-pink-400",
+    "bg-green-400",
+    "bg-yellow-400",
+    "bg-blue-500",
+    "text-gray-400",
+  ],
 };
